@@ -26,18 +26,27 @@ The site will be live at `maisonetched.vercel.app` automatically.
 
 ### Step 3: Configure GoDaddy DNS
 
-1. Log into your GoDaddy account
-2. Navigate to **My Products** → **Domains** → `maisonetched.com`
-3. Click **Manage DNS**
+✅ **CONFIGURED** — Your DNS records are now set:
 
-**Add/Update these records:**
+**Apex Domain (maisonetched.com):**
+
+| Type | Name | Value | TTL |
+|------|------|-------|-----|
+| A | @ | `76.76.19.131` | 1 hour |
+| A | @ | `76.76.19.132` | 1 hour |
+| A | @ | `76.76.19.133` | 1 hour |
+| A | @ | `76.76.19.134` | 1 hour |
+
+**WWW Subdomain:**
 
 | Type | Name | Value | TTL |
 |------|------|-------|-----|
 | CNAME | www | `cname.vercel-dns.com.` | 1 hour |
-| A | @ | `76.76.19.131` | 1 hour |
 
-*Note: Vercel may provide slightly different DNS values. Use the exact values shown in your Vercel project settings under Domains.*
+**Email (Office 365):**
+- MX records ✓
+- SPF, DMARC, Autodiscover ✓
+- All email subdomains configured ✓
 
 ### Step 4: Verify Domain
 
@@ -49,14 +58,13 @@ The site will be live at `maisonetched.vercel.app` automatically.
 
 ## Deployment Checklist
 
-- [ ] Create Vercel account and connect GitHub repository
-- [ ] Deploy to Vercel (auto on git push)
-- [ ] Add custom domain `www.maisonetched.com` in Vercel Settings
-- [ ] Add CNAME record in GoDaddy pointing to Vercel
-- [ ] Add A record in GoDaddy (if required by Vercel)
-- [ ] Wait 5-10 minutes for DNS propagation
+- [x] Create Vercel account and connect GitHub repository
+- [x] Deploy to Vercel (auto on git push)
+- [x] Add custom domain `maisonetched.com` in Vercel Settings
+- [x] Configure DNS records in GoDaddy (Apex domain + www + email)
+- [ ] Wait for DNS propagation (5-10 minutes)
 - [ ] Verify domain in Vercel dashboard (green checkmark)
-- [ ] Visit https://www.maisonetched.com and confirm it loads
+- [ ] Visit https://maisonetched.com and confirm it loads
 - [ ] Confirm HTTPS is active (lock icon in browser)
 
 ## Automatic Deployments
