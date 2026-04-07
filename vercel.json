@@ -7,5 +7,5 @@
       "destination": "/$1"
     }
   ],
-  "env": []
+  "env": {}
 }
